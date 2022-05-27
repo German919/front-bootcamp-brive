@@ -7,18 +7,18 @@ export const columns = [
     },
     {
       title: 'Nombre_Empresa',
-      field: 'nombre_empresa',
+      field: 'name',
       width: '500px',
       align: 'justify'
     },
     {
-      title: 'Vacantes',
-      field: 'vacantes',
+      title: 'Total_Vacantes',
+      field: 'totalVacants',
       align: 'justify',
     },
     {
-      title: 'Fecha',
-      field: 'fecha',
+      title: 'Fecha_Busqueda',
+      field: 'ceateDate',
       width: '300px',
       align: 'justify'
     }

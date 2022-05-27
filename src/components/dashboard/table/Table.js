@@ -3,27 +3,10 @@ import MaterialTable from '@material-table/core'
 import { columns } from './columns'
 
 
-function Table () {
- 
-//   const [ products, setProducts ] = useState()
-//   const [selectedRows, setSelectedRows] = useState([])
-  const data = [
-    { 
-        id:1, nombre_empresa:"Pepsi", vacantes:15, fecha:'18-05-22'
-    },
-    { 
-        id:2, nombre_empresa:"Adidas", vacantes:35, fecha:'15-03-22'
-    },
-    { 
-        id:3, nombre_empresa:"Nike", vacantes:20, fecha:'08-05-22'
-    },
-    { 
-        id:4, nombre_empresa:"Coca Cola", vacantes:5, fecha:'07-03-22'
-    },
-    { 
-        id:5, nombre_empresa:"Brive", vacantes:22, fecha:'12-04-22'
-    }
-  ]
+function Table ( ) {
+
+    const res = localStorage.getItem('vacants')
+    const vacants = JSON.parse(res)
   
   return (
     <div style={{ display: 'flex', justifyContent:'center', alignItems:'center'}}>
@@ -32,12 +15,8 @@ function Table () {
         <MaterialTable
             title= 'VACANTES'
             columns={columns}
-            data={ data }
-            // onSelectionChange ={(rows) => setSelectedRows(rows)}
+            data={ vacants ? vacants.data : [] }
             options={{
-            exportButton:true,
-            exportAllData:true,
-            //   selection: true,
             search: true,
             sorting: true,
             searchAutoFocus: false,
